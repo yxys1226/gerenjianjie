@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历 - 尹硕</title>
+    <meta name="description" content="尹硕个人简历网站，展示教育背景、专业技能和项目经验">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- 页面加载动画 -->
+    <div id="loading" class="loading-screen">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>加载中...</p>
+        </div>
+    </div>
+
+    <!-- 固定导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">尹硕的简历</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link">教育背景</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">专业技能</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">工作经验</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">联系方式</a>
+                </li>
+            </ul>
+            <div class="nav-buttons">
+                <!-- 主题切换按钮 -->
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- 移动端菜单切换按钮 -->
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+        <!-- 页面进度条 -->
+        <div class="progress-bar" id="progress-bar"></div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 首页/个人介绍 -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="typing-text">你好，我是</span>
+                            <span class="name">尹硕</span>
+                        </h1>
+                        <p class="hero-subtitle">区块链工程专业  </p>
+                        <p class="hero-description">
+                            三亚学院区块链工程专业在读学生，身高203cm，具备丰富的志愿服务经验和体育赛事组织能力。
+                            曾获蓝桥杯省级二等奖，通过英语四级，拥有篮球裁判员和围棋教师资格证书，擅长秩序维护和现场协调工作。
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary">查看经历</a>
+                            <a href="#contact" class="btn btn-secondary">联系我</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="profile-img"> 
+                            <img src="尹硕证件照.jpg" alt="尹硕证件照" onerror="this.style.display='none'; this.parentNode.querySelector('.profile-overlay').style.background='linear-gradient(135deg, #4CAF50, #45a049)'; this.parentNode.querySelector('.profile-overlay').style.width='250px'; this.parentNode.querySelector('.profile-overlay').style.height='250px'; this.parentNode.querySelector('.profile-overlay').style.borderRadius='50%'; this.parentNode.querySelector('.profile-overlay').style.display='flex'; this.parentNode.querySelector('.profile-overlay').style.alignItems='center'; this.parentNode.querySelector('.profile-overlay').style.justifyContent='center';">
+                            <div class="profile-overlay">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 轮播图展示 -->
+        <section class="carousel-section">
+            <div class="container">
+                <h2 class="section-title">个人亮点展示</h2>
+                <div class="carousel-container">
+                    <div class="carousel" id="carousel">
+                        <div class="carousel-slide active">
+                            <img src="蓝桥杯获奖.png" alt="蓝桥杯获奖">
+                            <div class="carousel-content">
+                                <h3>蓝桥杯省级二等奖</h3>
+                                <p>第十五届蓝桥杯全国软件和信息技术专业人才大赛获省级二等奖，展现专业技术能力</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="篮球教练.png" alt="篮球教练">
+                            <div class="carousel-content">
+                                <h3>丰富的篮球教练经验</h3>
+                                <p>济南大树篮球馆担任教练，具备中国篮球协会三级裁判员资格，校篮球队成员</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="志愿服务.png" alt="志愿服务">
+                            <div class="carousel-content">
+                                <h3>2年志愿服务经验</h3>
+                                <p>具备丰富的志愿服务经验，擅长会场布置、引导观众、维持秩序等工作</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev" id="prevBtn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" id="nextBtn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教育背景 -->
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">教育背景</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>本科学士学位（在读）</h3>
+                            <h4>三亚学院 - 区块链工程专业</h4>
+                            <span class="timeline-date">2023.09 - 2027.06</span>
+                            <p>
+                                <strong>绩点：</strong>3.7/4.0（学院前10）<br>
+                                <strong>主要课程：</strong>区块链技术、智能合约、分布式系统、数据结构、算法设计<br>
+                                <strong>在校表现：</strong>校学生会干事、校篮球队成员
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 专业技能 -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">专业技能与证书</h2>
+                <div class="skills-grid">
+                    <!-- 技能进度条 -->
+                    <div class="skills-category">
+                        <h3>技术技能</h3>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">区块链技术</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">办公软件应用</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">志愿服务组织</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">体育运动指导</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 技能雷达图 -->
+                    <div class="skills-chart">
+                        <h3>技能雷达图</h3>
+                        <div class="chart-container">
+                            <canvas id="skillsChart" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 证书荣誉单独展示 -->
+                <div class="certificates-section">
+                    <h3>证书荣誉</h3>
+                    <div class="certificates">
+                        <div class="cert-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>蓝桥杯省级二等奖，通过英语四级</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-basketball-ball"></i>
+                            <span>中国篮球协会三级裁判员</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-chess"></i>
+                            <span>全国围棋专业高级教师，三级裁判员</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>普通话等级二甲</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-award"></i>
+                            <span>智慧办公挑战赛一等奖</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-medal"></i>
+                            <span>半程马拉松大众一级证书</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 工作经验 -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">工作经验</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="篮球教练工作.png" alt="篮球教练工作">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-basketball-ball"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>篮球教练</h3>
+                            <p><strong>济南大树篮球馆 | 2023.06-2023.09</strong></p>
+                            <p>负责指导和培训球员，设计训练计划，参与战术制定和比赛策划，带领球队取得显著进步和优异成绩。</p>
+                            <div class="project-tags">
+                                <span class="tag">体育教学</span>
+                                <span class="tag">团队管理</span>
+                                <span class="tag">战术指导</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="社区工作.png" alt="社区工作">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-users"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>社区工作人员</h3>
+                            <p><strong>济南市龙洞街道锦屏第二社区 | 2024.06-2024.09</strong></p>
+                            <p>负责宣传内容策划、组织社区活动、入户宣传调研、线上线下推广等工作，提升社区服务质量。</p>
+                            <div class="project-tags">
+                                <span class="tag">活动策划</span>
+                                <span class="tag">宣传推广</span>
+                                <span class="tag">社区服务</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="志愿服务.png" alt="志愿服务">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-heart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>志愿服务经验</h3>
+                            <p><strong>多个志愿组织 | 2年经验</strong></p>
+                            <p>具备丰富的志愿服务推广经验，擅长会场布置、引导观众、解答疑问、维持秩序等工作。</p>
+                            <div class="project-tags">
+                                <span class="tag">志愿服务</span>
+                                <span class="tag">秩序维护</span>
+                                <span class="tag">现场协调</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">联系方式</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>邮箱</h3>
+                                <p>2687337144@qq.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>手机</h3>
+                                <p>13181720477</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>籍贯</h3>
+                                <p>山东济南</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>出生日期</h3>
+                                <p>2004年12月</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-ruler-vertical"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>身高体重</h3>
+                                <p>203cm / 85kg</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>意向岗位</h3>
+                                <p>秩序组（长期志愿）</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>发送消息</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="您的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="您的邮箱" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="留言内容" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">发送消息</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 项目详情模态框 -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modalBody">
+                <!-- 项目详情内容将通过JavaScript动态插入 -->
+                <div class="modal-project-header">
+                    <h2 id="modalTitle">项目标题</h2>
+                    <p id="modalSubtitle">项目副标题</p>
+                </div>
+                <div class="modal-project-image">
+                    <img id="modalImage" src="" alt="项目图片">
+                </div>
+                <div class="modal-project-content">
+                    <div class="modal-section">
+                        <h3>项目描述</h3>
+                        <p id="modalDescription">项目详细描述...</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>使用技术</h3>
+                        <div id="modalTags" class="modal-tags">
+                            <!-- 技术标签将动态插入 -->
+                        </div>
+                    </div>
+                    <div class="modal-section">
+                        <h3>项目特色</h3>
+                        <ul id="modalFeatures">
+                            <!-- 项目特色将动态插入 -->
+                        </ul>
+                    </div>
+                    <div class="modal-section">
+                        <h3>工作职责</h3>
+                        <ul id="modalResponsibilities">
+                            <!-- 工作职责将动态插入 -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-project-actions">
+                    <button class="btn btn-primary" onclick="closeModal()">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI聊天机器人 -->
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <i class="fas fa-robot"></i>
+                <h3>简历助手</h3>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    你好！我是你的AI简历助手，有什么我可以帮您的吗？
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="输入您的问题...">
+                <button id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
